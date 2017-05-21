@@ -2,12 +2,12 @@ import sys
 import os
 import hashlib
 
-print("Need for Speed: Most Wanted SaveFile Editor v0.1")
+print("Need for Speed: Most Wanted SaveFile Editor v1.0.0")
 print("by Mian_Bilawal aka Dragneel")
 print()
 if (len(sys.argv) > 3 or (len(sys.argv) < 2)):
 	print("Usage:")
-	print("NFSMW-S.py SaveFile [Argument]")
+	print("{} SaveFile [Argument]".format(sys.argv[0]))
 	print()
 	print("Argument:")
 	print("-b: BackUp the original File")
