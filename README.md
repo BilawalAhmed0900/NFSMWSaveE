@@ -1,6 +1,5 @@
 # NFSMWSaveE
 This is Need for Speed Most Wanted (2005) Save File Editor.
-It's written in Python
 
 	Usage:
 	NFSMW-S.py SaveFile [Argument]
