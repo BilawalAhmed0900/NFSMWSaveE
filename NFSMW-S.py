@@ -88,7 +88,16 @@ print("Done!")
 Chane the bounty of the first car
 Same as last
 '''
-inptr.seek(0xE2FD)
+inptr.seek(0xE2ED)
+while(1):
+	bCar = inptr.read(1)
+	Car = int.from_bytes(bCar, byteorder="little")
+	if (Car == 0xFF):
+		inptr.seek(0x37, 1)
+		continue
+	else:
+		break
+inptr.seek(0xF, 1)
 bBounty = input("Modified Bounty: ")
 print("Writing modified bounty...", end="")
 Bounty = int(bBounty)
