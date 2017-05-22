@@ -1,8 +1,7 @@
 import sys
-import os
 import hashlib
 
-print("Need for Speed: Most Wanted SaveFile Editor v1.0.0")
+print("Need for Speed: Most Wanted SaveFile Editor v1.1.0")
 print("by Mian_Bilawal aka Dragneel")
 print()
 
@@ -86,7 +85,8 @@ print("Done!")
 
 '''
 Chane the bounty of the first car
-Same as last
+Giving 0 will not change the bounty to 0 but it will keep the current bounty
+-1 will do that (negative one)
 '''
 inptr.seek(0xE2ED)
 while(1):
@@ -99,7 +99,7 @@ while(1):
 		break
 inptr.seek(0xF, 1)
 bBounty = input("Modified Bounty: ")
-print("Writing modified bounty...", end="")
+print("Writing modified bounty... ", end="")
 Bounty = int(bBounty)
 if (Bounty > ((1 << 31) - 1)):
 	Bounty = ((1 << 31) - 1)
