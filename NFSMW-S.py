@@ -52,6 +52,14 @@ inptr.seek(0x4039)
 bOMoney = inptr.read(4)
 OMoney = int.from_bytes(bOMoney, byteorder="little")
 print("Money: {}".format(OMoney))
+
+'''
+This loop works like that
+At 0xE2ED, first car is found
+If it is sold then its ID is FF else it starts from 00 upward
+Bounty of that car is found 0xF after ID
+Next Car is found 0x37 from ID
+'''
 inptr.seek(0xE2ED)
 while(1):
 	bCar = inptr.read(1)
@@ -86,7 +94,7 @@ inptr.write((Money).to_bytes(4, byteorder="little", signed=False))
 print("Done!")
 
 '''
-Chane the bounty of the first car
+Change the bounty of the first car
 Giving 0 will not change the bounty to 0 but it will keep the current bounty
 -1 will do that (negative one)
 '''
