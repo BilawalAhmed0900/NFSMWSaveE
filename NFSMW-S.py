@@ -42,6 +42,7 @@ if ((len(sys.argv) == 3) and (sys.argv[2] == "-b")):
 '''
 Getting Safe File Info
 '''
+print()
 print("Account Info:")
 inptr.seek(0x5A31)
 bName = inptr.read(8)
@@ -64,6 +65,7 @@ inptr.seek(0xF, 1)
 bOBounty = inptr.read(4)
 OBounty = int.from_bytes(bOBounty, byteorder="little")
 print("Bounty(1st Car only): {}".format(OBounty))
+print()
 
 '''
 Change the money specified by user
