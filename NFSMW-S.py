@@ -52,6 +52,10 @@ inptr.seek(0x4039)
 bOMoney = inptr.read(4)
 OMoney = int.from_bytes(bOMoney, byteorder="little")
 print("Money: {}".format(OMoney))
+inptr.seek(0xE2FD)
+bOBounty = inptr.read(4)
+OBounty = int.from_bytes(bOBounty, byteorder="little")
+print("Bounty(1st Car only): {}".format(OBounty))
 
 '''
 Change the money specified by user
@@ -69,6 +73,23 @@ if (Money == 0):
 elif (Money == -1):
 	Money = 0
 inptr.write((Money).to_bytes(4, byteorder="little", signed=False))
+print("Done!")
+
+'''
+Chane the bounty of the first car
+Same as last
+'''
+inptr.seek(0xE2FD)
+bBounty = input("Modified Bounty: ")
+print("Writing modified bounty...", end="")
+Bounty = int(bBounty)
+if (Bounty > ((1 << 31) - 1)):
+	Bounty = ((1 << 31) - 1)
+if (Bounty == 0):
+	Bounty = OBounty
+elif (Bounty == -1):
+	Bounty = 0
+inptr.write((Bounty).to_bytes(4, byteorder="little", signed=False))
 print("Done!")
 
 '''
