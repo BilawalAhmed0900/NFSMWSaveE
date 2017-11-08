@@ -2,7 +2,7 @@ import sys
 import hashlib
 
 print("Need for Speed: Most Wanted SaveFile Editor v1.1.0")
-print("by Mian_Bilawal aka Dragneel")
+print("by Dragneel1234")
 print()
 
 '''
