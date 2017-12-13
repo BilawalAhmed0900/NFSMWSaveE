@@ -138,3 +138,4 @@ inptr.seek(0xF85C)
 inptr.write((HASH).to_bytes(16, byteorder="big", signed=False))
 print("Done!")
 inptr.close()
+
